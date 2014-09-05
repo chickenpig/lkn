@@ -1,0 +1,146 @@
+/* Mixins */
+
+.transition (@property: all, @duration: 0.2s, @ease: ease-out) {
+
+    -webkit-transition: @property @duration @ease;
+    -moz-transition: @property @duration @ease;
+    transition: @property @duration @ease;
+
+}
+
+.box-sizing (@box-sizing: border-box) {
+
+    -webkit-box-sizing: @box-sizing;
+    -moz-box-sizing: @box-sizing;
+    -o-box-sizing: @box-sizing;
+    -ms-box-sizing: @box-sizing;
+    box-sizing: @box-sizing;
+
+}
+
+.font-size (@font-size: 10) {
+
+    font-size: @font-size * 1px;
+    font-size: (@font-size / 10) * 1rem;
+    
+}
+
+.line-height (@line-height: 10) {
+
+    line-height: @line-height * 1px;
+    line-height: (@line-height / 10) * 1rem;
+    
+}
+
+.letter-spacing (@letter-spacing: 1) {
+
+    letter-spacing: @letter-spacing * 1px;
+    letter-spacing: (@letter-spacing / 10) * 1rem;
+
+}
+
+.full-background-image (@background-image) {
+
+    background-image: url(@background-image);
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+    background-size: cover;
+
+}
+
+.full-background-size {
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+    background-size: cover;
+
+}
+
+.border-radius (@radius: 50%) {
+
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    -o-border-radius: @radius;
+    -ms-border-radius: @radius;
+    border-radius: @radius;
+
+}
+
+.columns (@count: 2, @gap: 20px) {
+
+    -webkit-column-count: @count;
+    -webkit-column-gap: @gap;
+    -moz-column-count: @count;
+    -moz-column-gap: @gap;
+    -o-column-count: @count;
+    -o-column-gap: @gap;
+    -ms-column-count: @count;
+    -ms-column-gap: @gap;
+    column-count: @count;
+    column-gap: @gap;
+
+}
+
+/* Helper Classes */
+
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    *text-indent: -9999px;
+    &:before {
+        content: "";
+        display: block;
+        width: 0;
+        height: 100%;
+    }
+}
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    &.focusable {
+        &:active,
+        &:focus {
+            clip: auto;
+            height: auto;
+            margin: 0;
+            overflow: visible;
+            position: static;
+            width: auto;
+        }
+    }
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.clearfix {
+    *zoom: 1;
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
